@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(loggerMiddleware);
 
 // Routes
-app.use("/api/users", authRoutes);
+app.use("/users", authRoutes);
 
 // Base Route
 app.get("/", (req, res) => {

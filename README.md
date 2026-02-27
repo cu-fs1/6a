@@ -24,7 +24,7 @@ routes/
 
 - **index.js**: bootstraps the server, loads environment variables, applies
   middleware (CORS, JSON body parsing, and request logging), and registers the
-  `/api/users` router.
+  `/users` router.
 - **config/db.js**: connects to the database using the `MONGO_URI` from
   environment.
 - **user.model.js**: defines `User` fields such as name, email, password, and
@@ -63,14 +63,14 @@ routes/
 
 | Method | Path                    | Description                            |
 |--------|-------------------------|----------------------------------------|
-| POST   | `/api/users/register`   | Register a new banking user            |
-| POST   | `/api/users/login`      | Login a user (plain email/password)    |
+| POST   | `/users/register`       | Register a new banking user            |
+| POST   | `/users/login`          | Login a user (plain email/password)    |
 
 ### Request Body Notes
 
-- `POST /api/users/register` expects:
+- `POST /users/register` expects:
   `{ "fullName": "John Doe", "email": "john@example.com", "password": "123456", "accountNumber": "0011223344" }`
-- `POST /api/users/login` expects:
+- `POST /users/login` expects:
   `{ "email": "john@example.com", "password": "123456" }`
 
 ---
