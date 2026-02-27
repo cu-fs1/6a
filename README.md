@@ -69,7 +69,7 @@ routes/
 ### Request Body Notes
 
 - `POST /users/register` expects:
-  `{ "fullName": "John Doe", "email": "john@example.com", "password": "123456", "accountNumber": "0011223344" }`
+  `{ "fullName": "John Doe", "email": "john@example.com", "password": "123456", "accountNumber": 11223344 }`
 - `POST /users/login` expects:
   `{ "email": "john@example.com", "password": "123456" }`
 
