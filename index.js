@@ -3,7 +3,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import loggerMiddleware from "./middleware/logger.middleware.js";
-import errorMiddleware from "./middleware/error.middleware.js";
 import authRoutes from "./routes/auth.routes.js";
 
 dotenv.config();
@@ -26,8 +25,6 @@ app.use("/users", authRoutes);
 app.get("/", (req, res) => {
   res.send("Welcome to the Banking API!");
 });
-
-app.use(errorMiddleware);
 
 // Start Server
 app.listen(PORT, () => {
