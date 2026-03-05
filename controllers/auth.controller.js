@@ -1,5 +1,5 @@
 import User from "../models/user.model.js";
-import createError from "http-errors";
+import { StatusCodes } from "http-status-codes";
 
 export const registerUser = async (req, res, next) => {
   try {
@@ -12,7 +12,7 @@ export const registerUser = async (req, res, next) => {
       accountNumber,
     });
 
-    return res.status(201).json({
+    return res.status(StatusCodes.CREATED).json({
       message: "User registered successfully",
       data: {
         id: user._id,
@@ -34,10 +34,10 @@ export const loginUser = async (req, res, next) => {
     const user = await User.findOne({ email });
 
     if (!user || user.password !== password) {
-      throw createError(401, "Invalid email or password");
+      throw createError(StatusCodes.UNAUTHORIZED, "Invalid email or password");
     }
 
-    return res.status(200).json({
+    return res.status(StatusCodes.OK).json({
       message: "Login successful",
       data: {
         id: user._id,
