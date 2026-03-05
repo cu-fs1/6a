@@ -140,6 +140,7 @@ Response `401`:
 | Package    | Purpose                                  |
 |------------|------------------------------------------|
 | Express.js | HTTP server & routing                    |
+| http-errors | Standardized HTTP error objects         |
 | Mongoose   | MongoDB ODM                              |
 | dotenv     | Environment variable loading             |
 | axios      | HTTP client for SolarWinds log shipping  |

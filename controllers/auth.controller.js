@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import createError from "http-errors";
 
 export const registerUser = async (req, res, next) => {
   try {
@@ -33,7 +34,7 @@ export const loginUser = async (req, res, next) => {
     const user = await User.findOne({ email });
 
     if (!user || user.password !== password) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      throw createError(401, "Invalid email or password");
     }
 
     return res.status(200).json({
