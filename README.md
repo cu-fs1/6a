@@ -32,7 +32,7 @@ routes/
   entries to SolarWinds Observability via `axios` using the `SOLARWINDS_TOKEN`
   env variable.
 - **models/user.model.js**: defines `User` fields — `fullName`, `email`,
-  `password`, `accountNumber` — with timestamps.
+  `password` — with timestamps.
 - **controllers/auth.controller.js**: contains `registerUser` and `loginUser`
   handlers.
 - **routes/auth.routes.js**: wires auth controller functions to `POST /register`
@@ -86,8 +86,7 @@ Request body:
 {
   "fullName": "John Doe",
   "email": "john@example.com",
-  "password": "123456",
-  "accountNumber": 11223344
+  "password": "123456"
 }
 ```
 
@@ -99,7 +98,6 @@ Response `201`:
     "id": "...",
     "fullName": "John Doe",
     "email": "john@example.com",
-    "accountNumber": 11223344,
     "createdAt": "..."
   }
 }
@@ -122,8 +120,7 @@ Response `200`:
   "data": {
     "id": "...",
     "fullName": "John Doe",
-    "email": "john@example.com",
-    "accountNumber": 11223344
+    "email": "john@example.com"
   }
 }
 ```
